@@ -1,0 +1,13 @@
+;; -*- emacs-lisp -*-
+
+;; global vars needed in personal files and bootstrapping
+(defvar comp-domain "harris")
+(defvar comp-name   "SC298562")
+(defvar emacs-root  "h:/emacs/")
+(defvar emacs-libs (concat emacs-root "libs/"))
+(defvar emacs-personal (concat emacs-root "personal/"))
+(defvar emacs-comp-specific (concat emacs-personal comp-domain "/" comp-name "/"))
+
+;; bootstrapping
+(load-file (concat emacs-libs "bootstrap.el"))
+(bootstrap-init comp-domain comp-name)

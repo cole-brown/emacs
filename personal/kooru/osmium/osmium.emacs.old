@@ -1,0 +1,4 @@
+;; -*- emacs-lisp -*-
+(defvar *my-emacs-lib-dir* "~/stuff/emacs/")
+(load-file (concat *my-emacs-lib-dir* "bootstrap.el"))
+(bootstrap-init "osmium")

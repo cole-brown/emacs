@@ -1,0 +1,10 @@
+#name : testing...
+# --
+
+$1
+${2:default}
+${3:low case}
+${4:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}
+${5:default}
+${3:$(upcase text)}
+$1
