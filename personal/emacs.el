@@ -79,4 +79,3 @@
 ;; load custom-set-variables and custom-set-faces
 ;;------------------------------------------------------------------------------
 (load-file (concat kooru/emacs-personal "custom.el"))
-
