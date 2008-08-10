@@ -11,3 +11,4 @@
 ;; bootstrapping
 (load-file (concat kooru/emacs-libs "bootstrap.el"))
 (bootstrap-init kooru/comp-domain kooru/comp-name)
+

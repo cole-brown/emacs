@@ -23,12 +23,20 @@
 (add-path "color-theme-6.6.0")
 (add-path "vc-clearcase-1.139")
 (add-path "yasnippet-0.5.5")
+(add-path "vc-git")
 
 ;;------------------------------------------------------------------------------
 ;; load libraries and setup
 ;;------------------------------------------------------------------------------
 
 (load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
+
+(require 'vc-git) ; http://www.emacswiki.org/cgi-bin/wiki/Git
+(when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
+(require 'git)
+(autoload 'git-blame-mode "git-blame"
+  "Minor mode for incremental blame for Git." t)
+
 
 ;;; Excellent package for better scrolling in emacs
 (require 'pager) ; http://user.it.uu.se/~mic/pager.el

@@ -3,22 +3,22 @@
 ;; emacs.el - non-computer-specific emacs init
 
 ;; these vars must be defined:
-;;    comp-domain
-;;    comp-name
-;;    emacs-root
-;;    emacs-libs
-;;    emacs-personal
-;;    emacs-comp-specific
-;;    my-tab-width
+;;    kooru/comp-domain
+;;    kooru/comp-name
+;;    kooru/emacs-root
+;;    kooru/emacs-libs
+;;    kooru/emacs-personal
+;;    kooru/emacs-comp-specific
+;;    kooru/tab-width
 
 
 ;;------------------------------------------------------------------------------
 ;; add all the elisp directories in emacs-libs dir to my load path
 ;;------------------------------------------------------------------------------
 (defun add-path (p)
-  (add-to-list 'load-path (concat emacs-libs p)))
+  (add-to-list 'load-path (concat kooru/emacs-libs p)))
 
-(add-path "") ;; for all libs residing in emacs-libs dir
+(add-path "") ;; for all libs residing in kooru/emacs-libs dir
 (add-path "custom") ; all my custom written libs
 (add-path "color-theme-6.6.0")
 (add-path "vc-clearcase-1.139")
@@ -54,7 +54,7 @@
 ;; For defining custom snippets, see here: http://code.google.com/p/yasnippet/wiki/HowtoDefineSnippet
 (require 'yasnippet) ; http://code.google.com/p/yasnippet/
 (yas/initialize)
-(yas/load-directory (concat emacs-libs "yasnippet-0.5.5/snippets"))
+(yas/load-directory (concat kooru/emacs-libs "yasnippet-0.5.5/snippets"))
 
 ;;------------------------------------------------------------------------------
 ;; load settings and config from custom libs
@@ -70,5 +70,5 @@
 ;;------------------------------------------------------------------------------
 ;; load custom-set-variables and custom-set-faces
 ;;------------------------------------------------------------------------------
-(load-file (concat emacs-personal "custom.el"))
+(load-file (concat kooru/emacs-personal "custom.el"))
 
