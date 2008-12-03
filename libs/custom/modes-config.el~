@@ -1,7 +1,7 @@
 ;; -*- emacs-lisp -*-
 
 ;; these vars must be defined:
-;;    my-tab-width
+;;    kooru/tab-width
 
 ;;------------------------------------------------------------------------------
 ;; various other modes settings
@@ -30,34 +30,34 @@
 ;; C/C++/Obj-C modes
 ;;------------------------------------------------------------------------------
 
-;; This will make spaces the indent character, and use my-tab-width spaces per 
+;; This will make spaces the indent character, and use kooru/tab-width spaces per 
 ;; indent level, for C, C++, and Objective C:
-(defun my-c++-mode-hook ()
+(defun kooru/c++-mode-hook ()
   ;; Style parameters
   (c-set-style "bsd")
-  (setq c-basic-offset my-tab-width)
-  (c-set-offset 'innamespace my-tab-width)
+  (setq c-basic-offset kooru/tab-width)
+  (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
-  (setq c-indent-level my-tab-width))
-(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+  (setq c-indent-level kooru/tab-width))
+(add-hook 'c++-mode-hook 'kooru/c++-mode-hook)
 
-(defun my-c-mode-hook ()
+(defun kooru/c-mode-hook ()
   ;; Style parameters
   (c-set-style "bsd")
-  (setq c-basic-offset my-tab-width)
-  (c-set-offset 'innamespace my-tab-width)
+  (setq c-basic-offset kooru/tab-width)
+  (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
-  (setq c-indent-level my-tab-width))
-(add-hook 'c-mode-hook 'my-c-mode-hook)
+  (setq c-indent-level kooru/tab-width))
+(add-hook 'c-mode-hook 'kooru/c-mode-hook)
 
-(defun my-objc-mode-hook ()
+(defun kooru/objc-mode-hook ()
   ;; Style parameters
   (c-set-style "bsd")
-  (setq c-basic-offset my-tab-width)
-  (c-set-offset 'innamespace my-tab-width)
+  (setq c-basic-offset kooru/tab-width)
+  (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
-  (setq c-indent-level my-tab-width))
-(add-hook 'objc-mode-hook 'my-objc-mode-hook)
+  (setq c-indent-level kooru/tab-width))
+(add-hook 'objc-mode-hook 'kooru/objc-mode-hook)
 
 ;; add '.tcc' files (and others) to auto-mode-list
 (add-to-list 'auto-mode-alist '("\\.tcc$" . c++-mode))

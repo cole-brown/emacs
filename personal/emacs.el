@@ -67,15 +67,15 @@
 ;;------------------------------------------------------------------------------
 ;; load settings and config from custom libs
 ;;------------------------------------------------------------------------------
-(load-library "funcs") ; util functions. Should be first as later libs assume it.
+(load-library "funcs") ; util functions. Should be first as later libs assume it
 (load-library "colors-config")
 (load-library "fonts-config")
-(load-library "misc-config")
 (load-library "modes-config")
 (load-library "keys-config")
-
+(load-library "misc-config")
 
 ;;------------------------------------------------------------------------------
 ;; load custom-set-variables and custom-set-faces
 ;;------------------------------------------------------------------------------
 (load-file (concat kooru/emacs-personal "custom.el"))
+

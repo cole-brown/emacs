@@ -1,6 +1,4 @@
 
-;; Denali program requires a tab-width of 3
-(setq kooru/tab-width 3)
+;; I heart a tab-width of 2
+(setq kooru/tab-width 2)
 
-;; AIP-IRAD requires a tab-width of 4
-;(setq kooru/tab-width 4)

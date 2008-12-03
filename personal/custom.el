@@ -2,12 +2,19 @@
 
 ;; custom.el - for custom-set-variables and custom-set-faces
 
+;(defvar aquamacs-140-custom-file-upgraded t)
+;(unless (fboundp 'auto-detect-longlines) (defun auto-detect-longlines () t))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+; '(aquamacs-additional-fontsets nil t)
+; '(aquamacs-customization-version-id 151 t)
+; '(aquamacs-default-styles '(default ((color-theme (zenburn)))))
+; '(aquamacs-styles-mode t nil (color-theme))
+; '(one-buffer-one-frame-mode nil nil (aquamacs-frame-setup))
  '(org-archive-tag "archive")
  '(org-clock-string "clock:")
  '(org-closed-string "closed:")
@@ -15,7 +22,10 @@
  '(org-deadline-string "deadline:")
  '(org-quote-string "quote")
  '(org-scheduled-string "scheduled:")
- '(org-todo-keywords (quote ("todo" "done"))))
+ '(org-todo-keywords (quote ("todo" "done")))
+ '(transient-mark-mode t)
+ '(inhibit-startup-screen t)
+)
 
 
 (custom-set-faces
@@ -23,4 +33,4 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- )
+)
