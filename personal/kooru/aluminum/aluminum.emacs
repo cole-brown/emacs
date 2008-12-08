@@ -17,3 +17,5 @@
       '("~/Documents/42/42.org"))
 
 (add-hook 'emacs-startup-hook 'kooru/auto-open-files)
+
+

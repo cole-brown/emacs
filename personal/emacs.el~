@@ -42,9 +42,24 @@
 (require 'pager) ; http://user.it.uu.se/~mic/pager.el
 ;; keybindings in keys-config
 
-(require 'cparen) ; http://www.hut.fi/u/rsaikkon/software/elisp/cparen.el
-(cparen-activate)
-(show-paren-mode t)
+;; parenthesis matching
+;; http://user.it.uu.se/~mic/emacs.shtml
+(when (or (string-match "XEmacs\\|Lucid" emacs-version) window-system)
+;   (require 'mic-paren) ; loading
+   (paren-activate)     ; activating
+   ;;; set here any of the customizable variables of mic-paren:
+   ;;; ...
+)
+
+;(require 'cparen) ; http://www.hut.fi/u/rsaikkon/software/elisp/cparen.el
+;(cparen-activate)
+
+;(require 'paren)
+;(show-paren-mode t)
+;(setq show-paren-style 'parenthesis)
+;(set-face-background 'show-paren-match-face (face-background 'default))
+;(set-face-foreground 'show-paren-match-face "#def")
+;(set-face-attribute 'show-paren-match-face nil :weight 'extra-bold)
 
 ;;; Source code browser for Emacs. Supports source-code 
 ;;; parsing for Java, C, C++, Elisp, Scheme etc.
@@ -69,7 +84,7 @@
 ;;------------------------------------------------------------------------------
 (load-library "funcs") ; util functions. Should be first as later libs assume it
 (load-library "colors-config")
-(load-library "fonts-config")
+;(load-library "fonts-config")
 (load-library "modes-config")
 (load-library "keys-config")
 (load-library "misc-config")
