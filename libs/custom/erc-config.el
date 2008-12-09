@@ -1,6 +1,6 @@
 ;; mostly gotten from various ERC-related pages on EmacsWiki:
 ;; http://www.emacswiki.org/cgi-bin/wiki/ERC
-(require 'erc-auto)
+;(require 'erc-auto)
 
 ;; variables
 (setq kooru/erc-nickserv-pass "foobarbaz")
@@ -58,7 +58,7 @@
       (just-one-space))))
 
 ;; Replace the useless binding for fill-paragraph in ERC:
-(define-key erc-mode-map (kbd "M-q") 'kooru/erc-unfill)
+(add-hook 'erc-mode-hook '(lambda () (define-key erc-mode-map (kbd "M-q") 'kooru/erc-unfill)))
 
 ;; Keep the prompt line at the bottom of the window.
 (add-hook 'erc-mode-hook 'erc-add-scroll-to-bottom)
