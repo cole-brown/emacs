@@ -84,7 +84,8 @@
 ;;------------------------------------------------------------------------------
 (load-library "funcs") ; util functions. Should be first as later libs assume it
 (load-library "colors-config")
-;(load-library "fonts-config")
+(load-library "erc-config")
+(load-library "fonts-config")
 (load-library "modes-config")
 (load-library "keys-config")
 (load-library "misc-config")

@@ -1,6 +1,5 @@
 ;; mostly gotten from various ERC-related pages on EmacsWiki:
 ;; http://www.emacswiki.org/cgi-bin/wiki/ERC
-;(require 'erc-auto)
 
 ;; variables
 (setq kooru/erc-nickserv-pass "foobarbaz")
@@ -43,7 +42,7 @@
 
 ;; The default left-side (nick) column of 27 can be changed by setting the 
 ;; 'erc-fill-static-center' variable.
-(setq erc-fill-static-center 15)
+(setq erc-fill-static-center 17)
 
 ;; helper defun to unfill lines that have been cut from elsewhere
 (defun kooru/erc-unfill ()
@@ -61,11 +60,8 @@
 (add-hook 'erc-mode-hook '(lambda () (define-key erc-mode-map (kbd "M-q") 'kooru/erc-unfill)))
 
 ;; Keep the prompt line at the bottom of the window.
+(setq erc-input-line-position -1)
 (add-hook 'erc-mode-hook 'erc-add-scroll-to-bottom)
-
-;; Rumored Carbon Emacs bug with scroll-to-bottom, so set to something other 
-;; than nil or -1. See http://www.emacswiki.org/emacs/ErcScrollToBottom
-(setq erc-input-line-position -2)
 
 ;; no logging support yet... 
 ;; http://www.emacswiki.org/emacs/ErcLogging
@@ -140,3 +136,4 @@
           (erc-display-message nil 'notice 'active
                                (apply 'concat (reverse (split-string (aref (get-text-property pos 'erc-parsed) 3) ""))))
         (erc-display-message nil 'notice 'active "Nothing to reverse")))))
+

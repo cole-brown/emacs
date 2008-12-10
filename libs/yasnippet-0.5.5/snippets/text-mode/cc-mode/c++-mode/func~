@@ -1,6 +1,0 @@
-#name : function(...){ ... }
-# --
-${1:void} ${2:_`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::${3:FooFunc}(${4:void})
-{
-   $0
-}

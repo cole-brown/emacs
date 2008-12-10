@@ -25,7 +25,7 @@
  '(org-todo-keywords (quote ("todo" "done")))
  '(transient-mark-mode t)
  '(inhibit-startup-screen t)
- '(paren-match-face (quote paren-face-match-light))
+ '(paren-match-face (quote paren-face-match))
  '(paren-sexp-mode nil)
 )
 
@@ -35,6 +35,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(paren-face-match-light ((t (:background "#5f5f5f" :foreground "#e37170" :weight ultra-bold))))
+ '(paren-face-match ((t (:background "#5f5f5f" :foreground "#e37170" :weight ultra-bold))))
  '(paren-face-mismatch ((((class color)) (:background "#332323" :foreground "#e37170"))))
  '(paren-face-no-match ((((class color)) (:background "#332323" :foreground "#e37170"))))
 )
