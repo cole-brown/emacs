@@ -1,46 +1,9 @@
+;; sasta-infix.el -- Convert a list of infix notation to prefix.
+
 ;; (c) 2008 Cole Brown
-;; 
-;; This work 'as-is' we provide.
-;; No warranty, express or implied.
-;; We've done our best,
-;; to debug and test.
-;; Liability for damages denied.
-;; 
-;; Permission is granted hereby,
-;; to copy, share, and modify.
-;; Use as is fit,
-;; free or for profit.
-;; On this notice these rights rely.
-;;
-;; (Lawyers, please see MIT License.)
+;; See LICENSE or sasta.el for license.
 
-;; Copyright (c) 2008 Cole Brown
-;; 
-;; Permission is hereby granted, free of charge, to any person
-;; obtaining a copy of this software and associated documentation
-;; files (the "Software"), to deal in the Software without
-;; restriction, including without limitation the rights to use,
-;; copy, modify, merge, publish, distribute, sublicense, and/or sell
-;; copies of the Software, and to permit persons to whom the
-;; Software is furnished to do so, subject to the following
-;; conditions:
-;; 
-;; The above copyright notice and this permission notice shall be
-;; included in all copies or substantial portions of the Software.
-;; 
-;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-;; EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-;; OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-;; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-;; HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-;; WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-;; FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-;; OTHER DEALINGS IN THE SOFTWARE.
-;;
-;; (aka MIT License)
-
-
-;; insert explination here
+;; blah blah
 
 ;; Operator precedence in alist. Equal precedence in same list.
 (setq *sasta/operator-precedence* '((lowest  + -)

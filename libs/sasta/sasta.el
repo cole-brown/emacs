@@ -1,6 +1,25 @@
+;; sasta-infix.el -- Convert a list of infix notation to prefix.
 
-;; for infix notation: http://www.informatimago.com/develop/emacs/index.html
+;; (c) 2008 Cole Brown
 
+;; Author: Cole Brown <sasta et sourcepan dawt org>
+;; Keywords: ERC, DnD, dice, sasta
+
+;; This work 'as-is' we provide.
+;; No warranty, express or implied.
+;; We've done our best,
+;; to debug and test.
+;; Liability for damages denied.
+;; 
+;; Permission is granted hereby,
+;; to copy, share, and modify.
+;; Use as is fit,
+;; free or for profit.
+;; On this notice these rights rely.
+
+;; Commentary: 
+
+;; blah blah blah
 
 (defun sasta/number-list-to-string (list)
   (if (< 1 (length list))
@@ -36,6 +55,17 @@
 (sasta/dice-roll "")
 (sasta/dice-roll "-")
 
+(defun sasta/sum-roll (roll-alist)
+  (let ((roll-sum 0))
+    (dolist (element roll-alist roll-sum)
+      (setq roll-sum (+ roll-sum 
+                        (if (cadr element) ; non-nil value of alist element implies dice roll
+                            (eval (cons '+ (cadr element))) ; sum dice roll
+                          (string-to-number (car element)))))))) ; else try to convert key to number
+
+(sasta/sum-roll '(("1d6" (3)) ("-" nil) ("d100" (26)) ("+" nil) ("5d3" (3 3 1 3 1)) ("*" nil) ("foo" nil) ("+" nil) ("4" nil)))
+(+ 3 0 26 3 3 1 3 1 0 0 0 4)
+
 (defun sasta/dice (words-list)
   (let ((roll-str '("" ""))
         (roll-alist (mapcar 'sasta/dice-roll words-list)))
@@ -44,13 +74,15 @@
                        ,(concat (cadr roll-str) (if (equal nil (cadr element))
                                                     (car element)
                                                   (sasta/number-list-to-string (cadr element))) " "))))
+    ;... now do the stupid infix math.
     (concat (sasta/trim-whitespace (car  roll-str))
             ": "
-            (sasta/trim-whitespace (cadr roll-str)))
-    ;... now do the stupid infix math.
-))
+            (sasta/trim-whitespace (cadr roll-str))
+            " = "
+            (number-to-string (sasta/sum-roll roll-alist)))))
 
-(sasta/dice '("1d6" "-" "d100" "+" "5d3" "*" "foo"))
+(sasta/dice '("1d6" "-" "d100" "+" "5d3" "*" "foo" "+" "4")) 
+"1d6 - d100 + 5d3 * foo + 4: 4 - 32 + (3 2 2 3 1) * foo + 4 = 51" (+ 4 32 3 2 2 3 1 4)
 
 ;;------------------------------------------------------------------------------
 ;; ERC integration
