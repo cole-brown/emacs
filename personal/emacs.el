@@ -95,3 +95,11 @@
 ;;------------------------------------------------------------------------------
 (load-file (concat kooru/emacs-personal "custom.el"))
 
+
+;;------------------------------------------------------------------------------
+;; add hooks
+;;------------------------------------------------------------------------------
+
+;; auto open files in kooru/auto-open-list variable.
+(add-hook 'emacs-startup-hook 'kooru/auto-open-files)
+

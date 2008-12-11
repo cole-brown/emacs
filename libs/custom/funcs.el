@@ -26,8 +26,9 @@
     (loop repeat count for i from start by step collect i)))
 
 (defun kooru/auto-open-files () 
-  (dolist (file kooru/auto-open-list)
-    (find-file file)))
+  (if (boundp 'kooru/auto-open-list)
+      (dolist (file kooru/auto-open-list)
+        (find-file file))))
 
 ;;------------------------------------------------------------------------------
 ;; whitespaces and deletion functions
