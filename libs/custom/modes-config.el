@@ -25,6 +25,33 @@
 (setq org-hide-leading-stars t) ; make outline a bit cleaner
 (setq org-odd-levels-only t)    ; make outline a bit cleaner
 
+;;------------------------------------------------------------------------------
+;; nXML-mode
+;;------------------------------------------------------------------------------
+;; http://www.thaiopensource.com/nxml-mode/
+(load-library "rng-auto.el")
+
+(add-to-list 'auto-mode-alist
+             (cons (concat "\\." (regexp-opt '("xml" "xsd" "sch" "rng" "xslt" "svg" "rss") t) "\\'")
+                   'nxml-mode))
+
+(setq magic-mode-alist
+      (cons '("<＼＼?xml " . nxml-mode)
+            magic-mode-alist))
+(fset 'xml-mode 'nxml-mode)
+(fset 'html-mode 'nxml-mode)
+
+(defun kooru/nxml-mode-hook ()
+  ;; Style parameters
+  (local-set-key "\C-c/" 'nxml-finish-element)
+  (local-set-key [return] 'newline-and-indent)
+  (setq indent-tabs-mode nil
+        nxml-attribute-indent kooru/tab-width
+        nxml-child-indent kooru/tab-width
+        nxml-auto-insert-xml-declaration-flag t)
+  (rng-validate-mode)
+  (unify-8859-on-decoding-mode))
+(add-hook 'nxml-mode-hook 'kooru/nxml-mode-hook)
 
 ;;------------------------------------------------------------------------------
 ;; C/C++/Obj-C modes
@@ -38,7 +65,8 @@
   (setq c-basic-offset kooru/tab-width)
   (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
-  (setq c-indent-level kooru/tab-width))
+  (setq c-indent-level kooru/tab-width)
+  (local-set-key [return] 'newline-and-indent))
 (add-hook 'c++-mode-hook 'kooru/c++-mode-hook)
 
 (defun kooru/c-mode-hook ()
@@ -47,7 +75,8 @@
   (setq c-basic-offset kooru/tab-width)
   (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
-  (setq c-indent-level kooru/tab-width))
+  (setq c-indent-level kooru/tab-width)
+  (local-set-key [return] 'newline-and-indent))
 (add-hook 'c-mode-hook 'kooru/c-mode-hook)
 
 (defun kooru/objc-mode-hook ()
@@ -56,7 +85,8 @@
   (setq c-basic-offset kooru/tab-width)
   (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
-  (setq c-indent-level kooru/tab-width))
+  (setq c-indent-level kooru/tab-width)
+  (local-set-key [return] 'newline-and-indent))
 (add-hook 'objc-mode-hook 'kooru/objc-mode-hook)
 
 ;; add '.tcc' files (and others) to auto-mode-list
@@ -72,3 +102,18 @@
 (add-to-list 'auto-mode-alist '("\\.c$"   . c-mode))
 (add-to-list 'auto-mode-alist '("\\.m$"   . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.pm$"  . perl-mode))
+
+
+;; useful for if different projects required different tab-widths
+;(defun my-nxml-mode-hook ()
+;  (if (string-match "/oneup/" (buffer-file-name))
+;      (setq tab-width 4
+;            indent-tabs-mode nil
+;            nxml-child-indent 4
+;            nxml-attribute-indent 4)
+;    (if (string-match "/workspace/" (buffer-file-name))
+;        (setq tab-width 2
+;              indent-tabs-mode t
+;              nxml-child-indent 2
+;              nxml-attribute-indent 2))))
+

@@ -24,6 +24,7 @@
 (add-path "vc-clearcase-1.139")
 (add-path "yasnippet-0.5.5")
 (add-path "vc-git")
+(add-path "nxml-mode-20041004")
 
 ;;------------------------------------------------------------------------------
 ;; load libraries and setup
@@ -36,7 +37,6 @@
 (require 'git)
 (autoload 'git-blame-mode "git-blame"
   "Minor mode for incremental blame for Git." t)
-
 
 ;;; Excellent package for better scrolling in emacs
 (require 'pager) ; http://user.it.uu.se/~mic/pager.el
@@ -89,12 +89,12 @@
 (load-library "modes-config")
 (load-library "keys-config")
 (load-library "misc-config")
+(load-library "ido-config")
 
 ;;------------------------------------------------------------------------------
 ;; load custom-set-variables and custom-set-faces
 ;;------------------------------------------------------------------------------
 (load-file (concat kooru/emacs-personal "custom.el"))
-
 
 ;;------------------------------------------------------------------------------
 ;; add hooks
