@@ -66,6 +66,12 @@
 ;; no logging support yet... 
 ;; http://www.emacswiki.org/emacs/ErcLogging
 
+;; use utf-8 encoding as default, except for channels in erc-encoding-coding-alist.
+(setq  erc-server-coding-system '(utf-8 . utf-8))
+;       erc-encoding-coding-alist '(("#linuxfire" . chinese-iso-8bit) ; note that, this is an alist and you can append cons cell for multi-channel
+;                                   ("#foobar" . chinese-iso-8bit)
+;                                   ("#barfoo" . chinese-big5)))
+
 ;; auto-join multiple channels on multiple servers:
 (setq erc-autojoin-channels-alist
       '((".*freenode.net" "#startups"); "#emacs" "#erc")

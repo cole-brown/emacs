@@ -79,6 +79,11 @@
 (yas/initialize)
 (yas/load-directory (concat kooru/emacs-libs "yasnippet-0.5.5/snippets"))
 
+;; line numbers on left 
+;; DL:   http://stud4.tuwien.ac.at/~e0225855/linum/linum.html
+;; Wiki: http://www.emacswiki.org/cgi-bin/wiki/LineNumbers#toc4
+(require 'linum)
+
 ;;------------------------------------------------------------------------------
 ;; load settings and config from custom libs
 ;;------------------------------------------------------------------------------

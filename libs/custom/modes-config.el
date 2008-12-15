@@ -50,7 +50,8 @@
         nxml-child-indent kooru/tab-width
         nxml-auto-insert-xml-declaration-flag t)
   (rng-validate-mode)
-  (unify-8859-on-decoding-mode))
+  (unify-8859-on-decoding-mode)
+  (linum-mode t))
 (add-hook 'nxml-mode-hook 'kooru/nxml-mode-hook)
 
 ;;------------------------------------------------------------------------------
@@ -66,7 +67,8 @@
   (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
-  (local-set-key [return] 'newline-and-indent))
+  (local-set-key [return] 'newline-and-indent)
+  (linum-mode t))
 (add-hook 'c++-mode-hook 'kooru/c++-mode-hook)
 
 (defun kooru/c-mode-hook ()
@@ -76,7 +78,8 @@
   (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
-  (local-set-key [return] 'newline-and-indent))
+  (local-set-key [return] 'newline-and-indent)
+  (linum-mode t))
 (add-hook 'c-mode-hook 'kooru/c-mode-hook)
 
 (defun kooru/objc-mode-hook ()
@@ -86,7 +89,8 @@
   (c-set-offset 'innamespace kooru/tab-width)
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
-  (local-set-key [return] 'newline-and-indent))
+  (local-set-key [return] 'newline-and-indent)
+  (linum-mode t))
 (add-hook 'objc-mode-hook 'kooru/objc-mode-hook)
 
 ;; add '.tcc' files (and others) to auto-mode-list
