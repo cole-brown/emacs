@@ -21,16 +21,24 @@
 (add-path "") ;; for all libs residing in kooru/emacs-libs dir
 (add-path "custom") ; all my custom written libs
 (add-path "color-theme-6.6.0")
-(add-path "vc-clearcase-1.139")
 (add-path "yasnippet-0.5.5")
 (add-path "vc-git")
 (add-path "nxml-mode-20041004")
+
+;; emacs version dependant
+;(add-path "vc-clearcase-1.139") ;old
+(if (eq emacs-major-version 22)
+    (add-path "vc-clearcase-2.1"))
+(if (eq emacs-major-version 23)
+    (add-path "vc-clearcase-3.0"))
+
 
 ;;------------------------------------------------------------------------------
 ;; load libraries and setup
 ;;------------------------------------------------------------------------------
 
 (load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
+(setq clearcase-checkout-comment-type 'none) ; no comments on checkout
 
 (require 'vc-git) ; http://www.emacswiki.org/cgi-bin/wiki/Git
 (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))

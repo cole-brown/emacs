@@ -1,6 +1,6 @@
 ;; ido-mode settings
 (setq 
- ido-ignore-buffers '("\\` " "^\*" ".*Completion" "^irc\.") ; ignore buffers like these
+ ido-ignore-buffers '("\\` " "^\*" ".*Completion" "^irc\." "\.TAGS$") ; ignore buffers like these
  ido-everywhere t                       ; use for many file dialogs
  ido-case-fold  t                       ; be case-insensitive
  ido-use-filename-at-point t            ; try to use filename...
@@ -18,9 +18,9 @@
   (save-excursion
     (let ((enable-recursive-minibuffers t))
       (visit-tags-table-buffer))
-    (ido-completing-read "Project file: "
+    (find-file (ido-completing-read "Project file: "
                          (tags-table-files)
-                         nil t)))
+                         nil t))))
 
 (global-set-key "\C-cf" 'kooru/ido-find-file-in-tag-files)
 
