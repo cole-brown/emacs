@@ -26,7 +26,7 @@
     (loop repeat count for i from start by step collect i)))
 
 (defun kooru/auto-open-files () 
-  (if (boundp 'kooru/auto-open-list)
+  (if (and window-system (boundp 'kooru/auto-open-list))
       (dolist (file kooru/auto-open-list)
         (find-file file))))
 
