@@ -38,5 +38,6 @@
  '(paren-face-match ((t (:background "#5f5f5f" :foreground "#e37170" :weight ultra-bold))))
  '(paren-face-mismatch ((((class color)) (:background "#332323" :foreground "#e37170"))))
  '(paren-face-no-match ((((class color)) (:background "#332323" :foreground "#e37170"))))
- '(linum ((t (:background "#4f4f4f" :foreground "#7f9f7f"))))
+ '(linum ((t (:foreground "#5f5f5f"))))
+; '(linum ((t (:background "#4f4f4f" :foreground "#7f9f7f"))))
 )
