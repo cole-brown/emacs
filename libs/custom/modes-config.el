@@ -25,6 +25,13 @@
 (setq org-hide-leading-stars t) ; make outline a bit cleaner
 (setq org-odd-levels-only t)    ; make outline a bit cleaner
 
+(defun kooru/org-mode-hook ()
+  ;; yasnippet
+  (make-variable-buffer-local 'yas/trigger-key)
+  (setq yas/trigger-key [tab])
+  (define-key yas/keymap [tab] 'yas/next-field-group))
+(add-hook 'org-mode-hook 'kooru/org-mode-hook)
+
 ;;------------------------------------------------------------------------------
 ;; nXML-mode
 ;;------------------------------------------------------------------------------

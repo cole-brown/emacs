@@ -55,3 +55,21 @@
   (let ((regexp (if arg "[ \t\n]+" "[ \t]+")))
     (re-search-forward regexp nil t)
     (replace-match "" nil nil)))
+
+;;------------------------------------------------------------------------------
+;; dates & times
+;;------------------------------------------------------------------------------
+
+(setq kooru/yyyy-mm-dd "%Y-%m-%d")
+(setq kooru/dd-mon-yy "%d %b %y")
+(defun kooru/next-friday (format)
+  (let ((today (nth 6 (decode-time (current-time)))))
+    (format-time-string 
+     format
+     (time-add 
+      (current-time) 
+      (days-to-time 
+       (if (eq 5 today) ; saturday is only day bigger than friday
+           6
+         (- 5 today)))))))
+
