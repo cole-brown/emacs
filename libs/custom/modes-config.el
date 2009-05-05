@@ -2,6 +2,7 @@
 
 ;; these vars must be defined:
 ;;    kooru/tab-width
+;;    kooru/fill-column
 
 ;;------------------------------------------------------------------------------
 ;; various other modes settings
@@ -75,6 +76,7 @@
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
+  (setq fill-column kooru/fill-column)
   (linum-mode t))
 (add-hook 'c++-mode-hook 'kooru/c++-mode-hook)
 
@@ -86,6 +88,7 @@
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
+  (setq fill-column kooru/fill-column)
   (linum-mode t))
 (add-hook 'c-mode-hook 'kooru/c-mode-hook)
 
@@ -97,6 +100,7 @@
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
+  (setq fill-column kooru/fill-column)
   (linum-mode t))
 (add-hook 'objc-mode-hook 'kooru/objc-mode-hook)
 
