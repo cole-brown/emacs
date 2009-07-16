@@ -72,7 +72,7 @@
   ;; Style parameters
   (c-set-style "bsd")
   (setq c-basic-offset kooru/tab-width)
-  (c-set-offset 'innamespace kooru/tab-width)
+  (c-set-offset 'innamespace 0)
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
@@ -84,7 +84,7 @@
   ;; Style parameters
   (c-set-style "bsd")
   (setq c-basic-offset kooru/tab-width)
-  (c-set-offset 'innamespace kooru/tab-width)
+  (c-set-offset 'innamespace 0)
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
@@ -96,7 +96,7 @@
   ;; Style parameters
   (c-set-style "bsd")
   (setq c-basic-offset kooru/tab-width)
-  (c-set-offset 'innamespace kooru/tab-width)
+  (c-set-offset 'innamespace 0)
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
