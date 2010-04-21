@@ -1,57 +1,48 @@
 #name : Connect code header
 # --
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//                        HARRIS LIMITED RIGHTS NOTICE
-// 
-//    WARNING: This document contains technical data according to the
-//  department of state, international traffic in arms regulations (itar - 22
-//  cfr chapter 1, subchapter m, parts 120-130) and may not be exported or
-//  shared with a foreign national without valid export authorization.  A
-//  specifically manufactured or modified item described by the documentation
-//  is also export-controlled and shall be handled accordingly.  Violations of
-//  these regulations are subject to severe criminal penalties.
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                     WARNING: EXPORT CONTROLLED - ITAR
 //
-//    (a) These data are submitted with limited rights under NASA / Harris
-//  Government Communications Systems Division Cooperative Agreement
-//  No. NNC09AA01A. These data may be reproduced and used by the Government with
-//  the express limitation that they will not, without written permission of the
-//  Contractor, be used for purposes of manufacture nor disclosed outside the
-//  Government; except that the Government may disclose these data outside the
-//  Government for the following purposes, if any; provided that the Government
-//  makes such disclosure subject to prohibition against further use and
-//  disclosure: None
-//    (b) This notice shall be marked on any reproduction of these data, in
-//  whole or in part.
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//   These item(s)/technical data are controlled by the Department of State,
+// International Traffic in Arms Regulations (ITAR), 22 CFR parts 120-130, and
+// cannot be exported from the United States or shared with a foreign person
+// without prior approval from the U.S. Department of State.
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Restricted Rights:
+// WARNING: This is a restricted distribution HARRIS REPOSITORY file.
+//          Do not use under a Government charge number without permission.
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //
-//        Copyright (C) Harris Corporation 2009 - All Rights Reserved
-//*****************************************************************************
+//        Copyright (C) Harris Corporation 2010 - All Rights Reserved
+//******************************************************************************
 // FILE:             ${1:`(file-name-nondirectory (buffer-file-name))`}
 //
 // CLASSIFICATION:   Unclassified
 //
-// DESCRIPTION:
-//   ${2:This file describes }
+// DESCRIPTION:      Reference the class description below.
 //
 // LIMITATIONS:
 //   ${3:None.}
 //
-// SOFTWARE HISTORY:
-// PTR#    Name   Date          Change Description
-//         cab    `(format-time-string kooru/yyyy-mm-dd (current-time))`    Initial coding.
+// SOFTWARE HISTORY: Version history is maintained in Rational ClearCase.
 //
 //*****************************************************************************
 #ifndef ${4:`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`_H}
 #define $4
 
-#include "Constants.h"
+#include "Common/Typedefs.h"
+#include "Common/ErrorEnum.h"
+#include "Common/BitTypeEnum.h"
+#include "Common/Interface.h"
+#include "Common/Singleton.h"
 $0
-namespace GppHal
-{
+namespace TrustedSwitch {
 
 //*****************************************************************************
 //
-// Class definition
+// Class Definition
 //   ${5:!TODO - define class}
 //
 // Note:
@@ -75,31 +66,25 @@ public:
    // Public Methods
    //**************************************************************************
 
-   //**************************************************************************
+   //-----------------------------------------------------------------------
+   // ${9:This is the only constructor.  Its primary purpose is to 
+   // initialize class configuration variables.}
    //
-   //  METHOD: $8
-   //
-   //  DESCRIPTION:
-   //    ${9:This is the only constructor.  Its primary purpose is to 
-   //    initialize class configuration variables.}
-   //
-   //  INPUTS:
+   // Inputs:
    //    ${10:None}
    //
-   //  RETURNS:
+   // Outputs: 
    //    Nothing
    //
-   //  PRECONDITIONS:
-   //    ${11:None}
+   // Exceptions:
+   //    ${11:None} - ${12:Nothing}
    //
-   //  POSTCONDITIONS:
-   //    ${12:None}
-   //
-   //**************************************************************************
-   //
+   //-----------------------------------------------------------------------
    $8(${13:void});
 
+   //-----------------------------------------------------------------------
    // Destructor
+   //-----------------------------------------------------------------------
    virtual ~$8(void);
 
 protected:
@@ -129,6 +114,6 @@ private:
    
 };
 
-} // end namespace GppHal
+} // end namespace TrustedSwitch
 #endif // $4
 

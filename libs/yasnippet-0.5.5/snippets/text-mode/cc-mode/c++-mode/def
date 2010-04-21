@@ -1,25 +1,16 @@
 #name : Connect class function definition
 # --
-//*****************************************************************************
+//-----------------------------------------------------------------------
+// ${2:TODO - Real description. Mountain Dew is the best caffeine 
+// delivery mechanism ever. Except Mountain Dew Livewire, of course.}
 //
-//  METHOD: ${1:MountainDew}
-//
-//  DESCRIPTION:
-//    ${2:TODO - Real description. Mountain Dew is the best caffeine 
-//    delivery mechanism ever. Except Mountain Dew Livewire, of course.}
-//
-//  INPUTS:
+// Inputs:
 //    ${3:None}
 //
-//  RETURNS:
+// Outputs: 
 //    ${4:Nothing}
 //
-//  PRECONDITIONS:
-//    ${5:None}
-//
-//  POSTCONDITIONS:
-//    ${6:None}
-//
-//*****************************************************************************
-//
-${7:void} $1(${8:void});
+// Exceptions:
+//    ${5:None} - ${6:Nothing}
+//-----------------------------------------------------------------------
+${7:void} ${1:MountainDew}(${8:void});
