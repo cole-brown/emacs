@@ -73,6 +73,7 @@
   (c-set-style "bsd")
   (setq c-basic-offset kooru/tab-width)
   (c-set-offset 'innamespace 0)
+  (c-set-offset 'case-label '+) ; indent case labels by c-indent-level, too
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
@@ -85,6 +86,7 @@
   (c-set-style "bsd")
   (setq c-basic-offset kooru/tab-width)
   (c-set-offset 'innamespace 0)
+  (c-set-offset 'case-label '+) ; indent case labels by c-indent-level, too
   (setq indent-tabs-mode nil)
   (setq c-indent-level kooru/tab-width)
   (local-set-key [return] 'newline-and-indent)
