@@ -24,6 +24,7 @@
 (add-path "yasnippet-0.5.5")
 (add-path "vc-git")
 (add-path "nxml-mode-20041004")
+(add-path "go-mode")
 
 ;; emacs version dependant
 ;(add-path "vc-clearcase-1.139") ;old
@@ -45,6 +46,10 @@
 (require 'git)
 (autoload 'git-blame-mode "git-blame"
   "Minor mode for incremental blame for Git." t)
+
+;; Go-mode obtained from:
+;; http://code.google.com/p/go/source/browse/misc/emacs/
+(require 'go-mode-load) ; Go mode
 
 ;;; Excellent package for better scrolling in emacs
 (require 'pager) ; http://user.it.uu.se/~mic/pager.el
