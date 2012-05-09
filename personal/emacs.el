@@ -38,6 +38,11 @@
 ;; load libraries and setup
 ;;------------------------------------------------------------------------------
 
+(require 'uniquify)
+(setq
+  uniquify-buffer-name-style 'post-forward
+  uniquify-separator ":")
+
 (load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
 (setq clearcase-checkout-comment-type 'none) ; no comments on checkout
 
