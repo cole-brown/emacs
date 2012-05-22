@@ -52,6 +52,10 @@
 (autoload 'git-blame-mode "git-blame"
   "Minor mode for incremental blame for Git." t)
 
+;; PHP Mode obtained from:
+;; http://php-mode.sourceforge.net/
+(load "php-mode")
+
 ;; Go-mode obtained from:
 ;; http://code.google.com/p/go/source/browse/misc/emacs/
 (require 'go-mode-load) ; Go mode
