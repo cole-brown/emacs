@@ -11,6 +11,11 @@
 ;;    kooru/emacs-comp-specific
 ;;    kooru/tab-width
 
+;;------------------------------------------------------------------------------
+;; modify defaults
+;;------------------------------------------------------------------------------
+
+(setq-default fill-column 80)
 
 ;;------------------------------------------------------------------------------
 ;; add all the elisp directories in emacs-libs dir to my load path
