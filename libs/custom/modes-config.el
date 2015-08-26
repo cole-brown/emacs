@@ -121,6 +121,21 @@
   (linum-mode t))
 (add-hook 'objc-mode-hook 'kooru/objc-mode-hook)
 
+;; This will make spaces the indent character, and use kooru/tab-width spaces per 
+;; indent level, for C#:
+(defun kooru/csharp-mode-hook ()
+  ;; Style parameters
+  (c-set-style "bsd")
+  (setq c-basic-offset kooru/tab-width)
+  (c-set-offset 'innamespace 0)
+  (c-set-offset 'case-label '+) ; indent case labels by c-indent-level, too
+  (setq indent-tabs-mode nil)
+  (setq c-indent-level kooru/tab-width)
+  (local-set-key [return] 'newline-and-indent)
+  (setq fill-column kooru/fill-column)
+  (linum-mode t))
+(add-hook 'csharp-mode-hook 'kooru/csharp-mode-hook)
+
 ;; add '.tcc' files (and others) to auto-mode-list
 (add-to-list 'auto-mode-alist '("\\.tcc$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.C$"   . c++-mode))
@@ -134,6 +149,7 @@
 (add-to-list 'auto-mode-alist '("\\.c$"   . c-mode))
 (add-to-list 'auto-mode-alist '("\\.m$"   . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.pm$"  . perl-mode))
+(add-to-list 'auto-mode-alist '("\\.cs$"  . csharp-mode))
 
 
 ;; useful for if different projects required different tab-widths

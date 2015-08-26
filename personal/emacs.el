@@ -12,6 +12,13 @@
 ;;    kooru/tab-width
 
 ;;------------------------------------------------------------------------------
+;; start server
+;;------------------------------------------------------------------------------
+
+;; cuz we want emacsclient to work good
+(server-start)
+
+;;------------------------------------------------------------------------------
 ;; modify defaults
 ;;------------------------------------------------------------------------------
 
@@ -33,10 +40,16 @@
 
 ;; emacs version dependant
 ;(add-path "vc-clearcase-1.139") ;old
-(if (eq emacs-major-version 22)
-    (add-path "vc-clearcase-2.1"))
-(if (eq emacs-major-version 23)
-    (add-path "vc-clearcase-3.0"))
+;(if (eq emacs-major-version 22)
+;    (add-path "vc-clearcase-2.1")
+;    (load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
+;    (setq clearcase-checkout-comment-type 'none) ; no comments on checkout
+;    )
+;(if (eq emacs-major-version 23)
+;    (add-path "vc-clearcase-3.0")
+;    (load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
+;    (setq clearcase-checkout-comment-type 'none) ; no comments on checkout
+;    )
 
 
 ;;------------------------------------------------------------------------------
@@ -47,9 +60,6 @@
 (setq
   uniquify-buffer-name-style 'post-forward
   uniquify-separator ":")
-
-(load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
-(setq clearcase-checkout-comment-type 'none) ; no comments on checkout
 
 (require 'vc-git) ; http://www.emacswiki.org/cgi-bin/wiki/Git
 (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
@@ -64,6 +74,10 @@
 ;; Go-mode obtained from:
 ;; http://code.google.com/p/go/source/browse/misc/emacs/
 (require 'go-mode-load) ; Go mode
+
+;; C# mode obtained from:
+;; http://code.google.com/p/csharpmode/
+(autoload 'csharp-mode "csharp-mode-0.8.5" "Major mode for editing C# code." t)
 
 ;;; Excellent package for better scrolling in emacs
 (require 'pager) ; http://user.it.uu.se/~mic/pager.el
