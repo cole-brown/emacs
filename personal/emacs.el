@@ -41,21 +41,9 @@
 ;; emacs version dependant
 ;(add-path "vc-clearcase-1.139") ;old
 ;(if (eq emacs-major-version 22)
-<<<<<<< HEAD
-;    (add-path "vc-clearcase-2.1")
-;    (load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
-;    (setq clearcase-checkout-comment-type 'none) ; no comments on checkout
-;    )
-;(if (eq emacs-major-version 23)
-;    (add-path "vc-clearcase-3.0")
-;    (load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
-;    (setq clearcase-checkout-comment-type 'none) ; no comments on checkout
-;    )
-=======
 ;    (add-path "vc-clearcase-2.1"))
 ;(if (eq emacs-major-version 23)
 ;    (add-path "vc-clearcase-3.0"))
->>>>>>> 46452388c07d74e4481c33a39eae856d1c675398
 
 
 ;;------------------------------------------------------------------------------
@@ -67,12 +55,9 @@
   uniquify-buffer-name-style 'post-forward
   uniquify-separator ":")
 
-<<<<<<< HEAD
-=======
 ;(load "vc-clearcase-auto") ; http://vc-clearcase.wiki.sourceforge.net/
 ;(setq clearcase-checkout-comment-type 'none) ; no comments on checkout
 
->>>>>>> 46452388c07d74e4481c33a39eae856d1c675398
 (require 'vc-git) ; http://www.emacswiki.org/cgi-bin/wiki/Git
 (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
 (require 'git)
