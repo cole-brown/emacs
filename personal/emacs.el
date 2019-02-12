@@ -16,7 +16,11 @@
 ;;------------------------------------------------------------------------------
 
 ;; cuz we want emacsclient to work good
-(server-start)
+(require 'server)
+;; just unless doesn't work on win 10? Have to have equal to t in there
+;; cuz apparently it's ':other' on a fresh startup? *shrug*
+(unless (eq (server-running-p) t)
+  (server-start))
 
 ;;------------------------------------------------------------------------------
 ;; modify defaults
